@@ -1,0 +1,14 @@
+title Exercise 0.4 : new note
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/notes
+note over server :The browser is asked by the server to do a new HTTP GET request by responding with the status code 302 of HTTP
+server-->browser : Status 302 : Redirect
+browser->server: HTTP GET  https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser:HTML-code
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser:main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: main.js
+note over browser:js-code is started to execute by the browser which requests JSON data from server
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: [{ content: "HTML is easy", date: "2019-05-23" }, ...]
+note over browser : The event handler that renders notes to display is executed by the browser
