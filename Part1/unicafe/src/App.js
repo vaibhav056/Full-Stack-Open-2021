@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 
-const Button = ({ Click, txt }) => {
+const Button = ({ Click, text }) => {
   return (
     <>
-      <button onClick={Click}>{txt}</button>
+      <button onClick={Click}>{text}</button>
     </>
   )
 }
