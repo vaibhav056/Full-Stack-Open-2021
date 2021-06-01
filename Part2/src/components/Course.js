@@ -1,43 +1,40 @@
 import React from 'react'
+const Courses = (c) => {
+    
+  let Courses = c.courses.map(value => (
+    <div key={value["Id"]}>
+      <Course coursename={value["Name"]} parts={value["parts"]}/>
+    </div>
+  ))
 
- 
-const Courses = (props) => {
+  return (
+    <div>
+      {Courses}
+    </div>
+  )
+}
+
+const Course = (c) => {
+  return (
+    <div>
+      <Header coursename={c.coursename} />
+      <Content parts={c.parts}/>
+      <Total parts={c.parts} />
+    </div>
+  )
+}
+  
+const Header = (c) => {
+    return (
+      <div>
+        <h1>{c.coursename}</h1>
+      </div>
+    )
+  }
+  
+const Content = (c) => {
     
-    let Courses = props.courses.map(value => (
-      <div key={value["Id"]}>
-        <Course coursename={value["Name"]} parts={value["parts"]}/>
-      </div>
-    ))
-  
-    return (
-      <div>
-        {Courses}
-      </div>
-    )
-  }
-  
-const Course = (props) => {
-    return (
-      <div>
-        <Header coursename={props.coursename} />
-        <Content parts={props.parts}/>
-        <Total parts={props.parts} />
-      </div>
-    )
-  }
- 
-  
-const Header = (props) => {
-    return (
-      <div>
-        <h1>{props.coursename}</h1>
-      </div>
-    )
-  }
-  
-const Content = (props) => {
-    
-    let Content = props.parts.map(value => (
+    let Content = c.parts.map(value => (
       <div key={value["Id"]}>
       <Part name={value["Name"]} exercises={value["Exercises"]} />
       </div>
@@ -46,26 +43,28 @@ const Content = (props) => {
     return (
       <div>
         {Content}
-      </div>
+      </div> 
     )
   }
   
   
-const Part = (props) => {
+const Part = (p) => {
     
     return (
-      <p>{props.name + " " + props.exercises}</p>
+      <p>{p.name + " " + p.exercises}</p>
     )
   }
   
-const Total = (props) => {
-    const total = Object.values(props.parts).reduce((s, {exercises}) => s + exercises, 0)
+const Total = (p) => {
+    const total = Object.values(p.parts).reduce((s, {exercises}) => s + exercises, 0)
     
       return (
         <p>
-        Number of exercises: {total}
+        Number of exercises {total}
         </p>
       )
   }
+
+  
 
 export default Courses
