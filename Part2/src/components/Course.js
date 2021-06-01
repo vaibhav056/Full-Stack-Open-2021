@@ -4,8 +4,8 @@ import React from 'react'
 const Courses = (props) => {
     
     let Courses = props.courses.map(value => (
-      <div key={value["id"]}>
-        <Course coursename={value["name"]} parts={value["parts"]}/>
+      <div key={value["Id"]}>
+        <Course coursename={value["Name"]} parts={value["parts"]}/>
       </div>
     ))
   
@@ -38,8 +38,8 @@ const Header = (props) => {
 const Content = (props) => {
     
     let Content = props.parts.map(value => (
-      <div key={value["id"]}>
-      <Part name={value["name"]} exercises={value["exercises"]} />
+      <div key={value["Id"]}>
+      <Part name={value["Name"]} exercises={value["Exercises"]} />
       </div>
     ))
   
@@ -63,7 +63,7 @@ const Total = (props) => {
     
       return (
         <p>
-        Number of exercises {total}
+        Number of exercises: {total}
         </p>
       )
   }
