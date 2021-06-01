@@ -4,44 +4,44 @@ import Courses from './components/Course'
 const App = () => {
   const courses = [
     {
-      name: 'Half Stack application development',
-      id: 1,
+      Name: 'Half Stack application development',
+      Id: 1,
       parts: [
         {
-          name: 'Fundamentals of React :',
-          exercises: 10,
-          id: 1
+          Name: 'Fundamentals of React :',
+          Exercises: 10,
+          Id: 1
         },
         {
-          name: 'Using props to pass data :',
-          exercises: 7,
-          id: 2
+          Name: 'Using props to pass data :',
+          Exercises: 7,
+          Id: 2
         },
         {
-          name: 'State of a component :',
-          exercises: 14,
-          id: 3
+          Name: 'State of a component :',
+          Exercises: 14,
+          Id: 3
         },
         {
-          name: 'Redux :',
-          exercises: 11,
-          id: 4
+          Name: 'Redux :',
+          Exercises: 11,
+          Id: 4
         }
       ]
     }, 
     {
-      name: 'Node.js :',
-      id: 2,
-      parts: [
+      Name: 'Node.js :',
+      Id: 2,
+      Parts: [
         {
-          name: 'Routing :',
-          exercises: 3,
-          id: 1
+          Name: 'Routing :',
+          Exercises: 3,
+          Id: 1
         },
         {
-          name: 'Middlewares :',
-          exercises: 7,
-          id: 2
+          Name: 'Middlewares :',
+          Exercises: 7,
+          Id: 2
         }
       ]
     }
